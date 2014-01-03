@@ -1,0 +1,19 @@
+[% IF no_wrapper %]
+[% content %]
+[% ELSE %]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html>
+<head>
+<title>[% title %]</title>
+<meta http-equiv="Content-Type" content="text/html"; charset=UTF-8" />
+</head>
+<body>
+[%# Status and error messages - not implemented yet %]
+<div>
+  <span class="message">[% status_msg %]</span>
+  <span class="error">[% error_msg %]</span>
+</div>
+<div class='content'>[% content %]</div>
+</body>
+</html>
+[% END %]

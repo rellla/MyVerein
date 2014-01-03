@@ -1,0 +1,16 @@
+[% title = 'Beitragssätze' %]
+<table>
+<tr><th>ID</th>
+	<th>Bemerkung</th>
+	<th>Betrag</th>
+	<th></th>
+</tr>
+[% FOREACH beitrag IN beitraege -%]
+<tr>
+<td>[% beitrag.id %]</td>
+<td>[% beitrag.bemerkung %]</td>
+<td>[% beitrag.beitrag %]</td>
+<td><a href="[% c.uri_for('/beitrag/delete', beitrag.id) %]">Löschen</a></td>
+</tr>
+[% END -%]
+</table>
