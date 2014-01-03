@@ -1,4 +1,5 @@
 package MyVerein::Controller::Beitrag;
+use utf8;
 use Moose;
 use namespace::autoclean;
 
@@ -38,6 +39,7 @@ sub list :Local :Args(0) {
     my ($self, $c) = @_;
     $c->stash(beitraege => [$c->model('MyVereinDB::Beitrag')->all]);
     $c->stash(template => 'beitrag/list.tt');
+    $c->load_status_msgs;
 }
 
 =head2 delete
@@ -51,9 +53,11 @@ sub delete :Local :Args(1) {
     if ($id) {
         my $beitrag = $c->model('MyVereinDB::beitrag')->find($id);
 #        my $deleted = $beitrag->delete;
-        $c->response->redirect($c->uri_for($self->action_for('list')));
+        $c->response->redirect($c->uri_for($self->action_for('list'),
+           {mid => $c->set_status_msg("Beitrag gelöscht!")}));
     } else {
-        $c->response->redirect($c->uri_for($self->action_for('list')));
+        $c->response->redirect($c->uri_for($self->action_for('list'),
+           {mid => $c->set_status_msg("Beitrag nicht gelöscht!")}));
     }
 }
 

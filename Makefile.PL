@@ -12,7 +12,11 @@ all_from 'lib/MyVerein.pm';
 requires 'Catalyst::Runtime' => '5.90053';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
+requires 'Catalyst::Plugin::Session::State::Cookie';
+requires 'Catalyst::Plugin::Session::Store::FastMmap';
+requires 'Catalyst::Plugin::StatusMessage';
 requires 'Catalyst::Action::RenderView';
+
 requires 'Moose';
 requires 'namespace::autoclean';
 requires 'Config::General'; # This should reflect the config file format you've chosen
