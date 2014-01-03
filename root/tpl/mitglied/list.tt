@@ -1,0 +1,91 @@
+[% title = 'Mitgliederliste' %]
+<div id="mitglied_form" style="display:none"></div>
+<table id="mitglieder_grid" style="display:none"></table>
+<style>
+.flexigrid div.fbutton .add
+{
+background: url([% c.uri_for('/static/images/flexigrid/add.png') %]) no-repeat center left;
+}
+.flexigrid div.fbutton .edit
+{
+background: url([% c.uri_for('/static/images/pen-16.gif') %]) no-repeat center left;
+}
+.flexigrid div.fbutton .delete
+{
+background: url([% c.uri_for('/static/images/flexigrid/close.png') %]) no-repeat center left;
+}
+</style>
+
+<script type="text/javascript">
+
+function add_mitglied(button, grid) {
+    var form_div = $('#mitglied_form');
+    var url = '/mitglied/add';
+    form_div.load(url, null, function() {
+        $('#mitglied_form form').ajaxForm({
+            url: '/mitglied/add',
+            success: function() {
+                form_div.hide();
+                $('#mitglieder_grid').flexReload();
+            }
+        });
+        form_div.show();
+    });
+}
+ 
+function edit_mitglied(button, grid) {
+    var id = $('.trSelected td:nth-child(1) div', grid).html();
+    var form_div = $('#mitglied_form');
+    var url = '/mitglied/edit/' + id;
+    form_div.load(url, null, function() {
+        $('#mitglied_form form').ajaxForm({
+            url: url,
+            success: function() {
+                form_div.hide();
+                $('#mitglieder_grid').flexReload();
+            }
+        });
+        form_div.show();
+    });
+}
+
+function delete_mitglied(button, grid) {}
+function show_mitglied(button, grid) {
+	var id = $('.trSelected td:nth-child(1) div', grid).html();
+	var url = '/mitglied/show/' + id;
+	mywindow = window.open(url, "Karteikarte");
+    mywindow.focus();
+	}
+ 
+$("#mitglieder_grid").flexigrid({
+    url: '/mitgliederrestapi/grid',
+    dataType: 'json',
+    colModel : [
+        {display: 'ID', name : 'mid', width : 20, sortable : false },
+        {display: 'Nachname', name : 'nachname', width : 100, sortable : true, align: 'left'},
+        {display: 'Vorname', name : 'vorname', width : 100, sortable : true, align: 'left'},
+        {display: 'Strasse', name : 'strasse', width : 150, sortable : true, align: 'left'},
+        {display: 'Hausnummer', name : 'hausnummer', width : 15, sortable : true, align: 'left'},
+        {display: 'Ort', name : 'ort', width : 100, sortable : true, align: 'left'},
+        {display: 'Geburtstag', name : 'geburtstag', width : 70, sortable : true, align: 'left'},
+    ],
+    searchitems : [
+        {display: 'Nachname', name: 'nachname', isdefault: true},
+        {display: 'Vorname', name: 'vorname' },
+    ],
+    buttons : [
+        {name: 'Anzeigen', bclass: 'show', onpress : show_mitglied},
+        {name: 'Hinzufügen', bclass: 'add', onpress : add_mitglied},
+        {name: 'Ändern', bclass: 'edit', onpress : edit_mitglied},
+        {name: 'Löschen', bclass: 'delete', onpress : delete_mitglied},
+        {separator: true}
+    ],
+    sortname: "nachname",
+    sortorder: "asc",
+    usepager: true,
+    useRp: true,
+    rp: 20,
+    height: 500
+});
+</script>
+[% #    title: 'Mitglied',     width: 900,%]
