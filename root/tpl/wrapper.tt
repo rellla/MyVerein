@@ -6,14 +6,26 @@
 <head>
 <title>[% title %]</title>
 <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8" />
+<link rel="stylesheet" href="[% c.uri_for('/static/css/style.css') %]" />
+<link rel="stylesheet" href="[% c.uri_for('/static/css/flexigrid.css') %]" />
+<script language="javascript" src="[% c.uri_for('/static/js/jquery.js') %]"></script>
+<script language="javascript" src="[% c.uri_for('/static/js/flexigrid.js') %]"></script>
 </head>
 <body>
+    <div class='container'>
+       <div class='title'>
+           <span class='title'>Mitgliederverwaltung DJK Langenmosen - [% title %]</span>
+           <span class='backbutton'><a href="[% c.uri_for('/') %]">Zur Startseite</a></span>
+       </div>
+       <br style='clear:both;'>
 [%# Status and error messages - not implemented yet %]
-<div>
-  <span class="message">[% status_msg %]</span>
-  <span class="error">[% error_msg %]</span>
-</div>
-<div class='content'>[% content %]</div>
+       <div>
+           <span class="message">[% status_msg %]</span>
+           <span class="error">[% error_msg %]</span>
+       </div>
+       <div class='content'>[% content %]</div>
+    </div>
+    <div class='copyright'>&copy; 2012 Andreas Baierl</div>
 </body>
 </html>
 [% END %]

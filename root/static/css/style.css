@@ -1,0 +1,57 @@
+body {
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+div.container {
+	border: 1px solid #aaa;
+	width: 980px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.title{
+	padding: 5px;
+	border-bottom: 1px solid #aaa;
+	height: 20px;
+	background-color: #eeeeee;
+}
+
+div.header2{
+	font-weight: bold;
+	font-size: 1.1em;
+	padding-bottom: 10px;
+}
+
+div.content {
+	padding: 5px;
+}
+
+span.title {
+	font-weight: bold;
+	float: left;
+}
+
+span.backbutton {
+	font-size: 0.8em;
+	float: right;
+}
+
+div.copyright {
+	font-size: 0.8em;
+	color: #888;
+	text-align: center;
+	padding-top: 20px;
+}
+
+input {
+#	display: block;
+}
+
+select {
+#	display: block;
+}
+
+.submit {
+	padding-top: .5em;
+	display: block;
+}
