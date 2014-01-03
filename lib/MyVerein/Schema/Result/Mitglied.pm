@@ -222,7 +222,81 @@ __PACKAGE__->set_primary_key("mid");
 # Created by DBIx::Class::Schema::Loader v0.07038 @ 2014-01-02 22:13:07
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:ocl9aOzlzdOev5llUENf8w
 
+=head1 Additional methods
+
+=head2 isFirma()
+
+=cut
+
+sub isFirma {
+    my ( $self ) = @_;
+    if ($self->firma) {
+        return "ja";
+    } else {
+        return "nein";
+    }
+}
+
+=head2 longGender()
+
+=cut
+
+sub longGender {
+    my ( $self ) = @_;
+    if ($self->geschlecht == "m") {
+        return "männlich";
+    } elsif ($self->geschlecht == "w") {
+        return "weiblich";
+    } else {
+        return "something";
+    }
+}
+
+=head1 RELATIONS
+
+=head2 strasse
+
+Type: belongs_to
+
+Related object: L<MyVerein::Schema::Result::Strasse>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "strasse",
+  "MyVerein::Schema::Result::Strasse",
+  { "foreign.id" => "self.strasse" },
+);
+
+=head2 ort
+
+Type: belongs_to
+
+Related object: L<MyVerein::Schema::Result::Ort>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "ort",
+  "MyVerein::Schema::Result::Ort",
+  { "foreign.id" => "self.ort" },
+);
+
+=head2 status
+
+Type: belongs_to
+
+Related object: L<MyVerein::Schema::Result::Status>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "status",
+  "MyVerein::Schema::Result::Status",
+  { "foreign.id" => "self.status" },
+);
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;
+
 1;

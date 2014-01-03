@@ -83,6 +83,17 @@ __PACKAGE__->set_primary_key("id");
 # Created by DBIx::Class::Schema::Loader v0.07038 @ 2014-01-02 22:13:07
 # DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:yGlQ6InswozI3lHDcXvEdQ
 
+=head1 Relations
+
+=head2 mitglied
+
+=cut
+
+__PACKAGE__->has_many(
+    "mitglied",
+    "MyVerein::Schema::Result::Mitglied",
+    { "foreign.strasse" => "self.id" },
+);
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
 __PACKAGE__->meta->make_immutable;

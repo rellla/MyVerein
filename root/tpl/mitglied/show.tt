@@ -5,11 +5,11 @@
 <tr><td>Nachname</td><td>[% mitglied.vorname %]</td></tr>
 <tr><td>ID</td><td>[% mitglied.mid %]</td></tr>
 <tr><td>Geburtstag</td><td>[% mitglied.geburtstag.dmy('.') %]</td></tr>
-<tr><td>Status</td><td>[% mitglied.status %]</td></tr>
-<tr><td>Geschlecht</td><td>[% mitglied.geschlecht %]</td></tr>
-<tr><td>Firma</td><td>[% mitglied.firma %]</td></tr>
-<tr><td>Strasse</td><td>[% mitglied.strasse %]</td></tr>
+<tr><td>Status</td><td>[% mitglied.status.status %]</td></tr>
+<tr><td>Geschlecht</td><td>[% mitglied.longGender %]</td></tr>
+<tr><td>Firma</td><td>[% mitglied.isFirma %]</td></tr>
+<tr><td>Strasse</td><td>[% mitglied.strasse.strassenname %]</td></tr>
 <tr><td>Hausnummer</td><td>[% mitglied.hausnummer %]</td></tr>
-<tr><td>Ort</td><td>[% mitglied.ort %]</td></tr>
+<tr><td>Ort</td><td>[% mitglied.ort.ortname %]</td></tr>
 </table>
 [% END -%]

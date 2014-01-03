@@ -55,10 +55,11 @@ sub grid_POST {
                 $_->mid,
                 $_->nachname,
                 $_->vorname,
-                $_->strasse,
+                $_->strasse->strassenname,
                 $_->hausnummer,
-                $_->ort,
+                $_->ort->ortname,
                 $_->geburtstag."",
+                $_->isFirma,
            ]
         } } $paged_rs->all
     ];

@@ -68,6 +68,7 @@ $("#mitglieder_grid").flexigrid({
         {display: 'Hausnummer', name : 'hausnummer', width : 15, sortable : true, align: 'left'},
         {display: 'Ort', name : 'ort', width : 100, sortable : true, align: 'left'},
         {display: 'Geburtstag', name : 'geburtstag', width : 70, sortable : true, align: 'left'},
+        {display: 'Firma', name : 'isFirma', width : 20, sortable : true, align: 'left'},
     ],
     searchitems : [
         {display: 'Nachname', name: 'nachname', isdefault: true},
