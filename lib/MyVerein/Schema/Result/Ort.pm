@@ -24,11 +24,15 @@ extends 'DBIx::Class::Core';
 
 =item * L<DBIx::Class::InflateColumn::DateTime>
 
+=item * L<DBIx::Class::TimeStamp>
+
+=item * L<DBIx::Class::PassphraseColumn>
+
 =back
 
 =cut
 
-__PACKAGE__->load_components("InflateColumn::DateTime");
+__PACKAGE__->load_components("InflateColumn::DateTime", "TimeStamp", "PassphraseColumn");
 
 =head1 TABLE: C<ort>
 
@@ -86,8 +90,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("id");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07038 @ 2014-01-02 22:13:07
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:lPHO6ZAK9xtunpZTSMceow
+# Created by DBIx::Class::Schema::Loader v0.07038 @ 2014-01-16 21:36:21
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:vWCeDfZdgQNlVzdR0MKEUw
 
 =head1 Relations
 

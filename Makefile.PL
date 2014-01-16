@@ -12,6 +12,8 @@ all_from 'lib/MyVerein.pm';
 requires 'Catalyst::Runtime' => '5.90053';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
+requires 'Catalyst::Plugin::Authentication';
+requires 'Catalyst::Plugin::Session';
 requires 'Catalyst::Plugin::Session::State::Cookie';
 requires 'Catalyst::Plugin::Session::Store::FastMmap';
 requires 'Catalyst::Plugin::StatusMessage';

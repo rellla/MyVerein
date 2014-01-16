@@ -16,6 +16,13 @@ div.title{
 	background-color: #eeeeee;
 }
 
+div.bottom{
+	padding: 5px;
+	border-top: 1px solid #aaa;
+	height: 20px;
+	background-color: #eeeeee;
+}
+
 div.header2{
 	font-weight: bold;
 	font-size: 1.1em;
@@ -36,6 +43,18 @@ span.backbutton {
 	float: right;
 }
 
+div.message {
+	padding: 5px;
+	font-size: 0.8em;
+	border: 1px solid #aaa;
+}
+
+div.error {
+	padding: 5px;
+	font-size: 0.8em;
+	color: red;
+}
+
 div.copyright {
 	font-size: 0.8em;
 	color: #888;
@@ -54,4 +73,9 @@ select {
 .submit {
 	padding-top: .5em;
 	display: block;
+}
+
+br.clearboth {
+    clear: both;
+	line-height: 0px;
 }

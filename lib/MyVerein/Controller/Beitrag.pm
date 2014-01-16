@@ -57,7 +57,7 @@ sub delete :Local :Args(1) {
            {mid => $c->set_status_msg("Beitrag gelöscht!")}));
     } else {
         $c->response->redirect($c->uri_for($self->action_for('list'),
-           {mid => $c->set_status_msg("Beitrag nicht gelöscht!")}));
+           {mid => $c->set_error_msg("Beitrag nicht gelöscht!")}));
     }
 }
 

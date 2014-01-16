@@ -1,5 +1,8 @@
 ﻿[% title = 'Startseite' %]
-<p>
-    <a href="[% c.uri_for('/mitglied') %]">Mitgliederliste</a></br>
+
+[% IF c.user_exists %]
+<p>   
+	<a href="[% c.uri_for('/mitglied') %]">Mitgliederliste</a></br>
 	<a href="[% c.uri_for('/beitrag') %]">Beitragssätze</a>
 </p>
+[% END %]

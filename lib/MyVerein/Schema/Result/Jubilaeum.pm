@@ -24,11 +24,15 @@ extends 'DBIx::Class::Core';
 
 =item * L<DBIx::Class::InflateColumn::DateTime>
 
+=item * L<DBIx::Class::TimeStamp>
+
+=item * L<DBIx::Class::PassphraseColumn>
+
 =back
 
 =cut
 
-__PACKAGE__->load_components("InflateColumn::DateTime");
+__PACKAGE__->load_components("InflateColumn::DateTime", "TimeStamp", "PassphraseColumn");
 
 =head1 TABLE: C<jubilaeum>
 
@@ -64,8 +68,8 @@ __PACKAGE__->add_columns(
 __PACKAGE__->set_primary_key("jalter");
 
 
-# Created by DBIx::Class::Schema::Loader v0.07038 @ 2014-01-02 22:13:07
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:72jBF2VK1GcPiqJq2DZtkA
+# Created by DBIx::Class::Schema::Loader v0.07038 @ 2014-01-16 21:36:21
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:WifXNfR+rLf3AQlpKY7i0g
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

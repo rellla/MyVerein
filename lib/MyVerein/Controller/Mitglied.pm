@@ -1,4 +1,4 @@
-package MyVerein::Controller::Mitglied;
+Ôªøpackage MyVerein::Controller::Mitglied;
 use Moose;
 use namespace::autoclean;
 
@@ -53,7 +53,7 @@ sub show :Local {
 
 =head2 delete
 
-Mitglied lˆschen.
+Mitglied l√∂schen.
 
 =cut
 
@@ -63,10 +63,10 @@ sub delete :Local :Args(1) {
         my $mitglied = $c->model('MyVereinDB::Mitglied')->find($mid);
 #        my $deleted = $mitglied->delete;
         $c->response->redirect($c->uri_for($self->action_for('list'),
-            {mid => $c->set_status_msg("Mitglied gelˆscht.")}));
+            {mid => $c->set_status_msg("Mitglied gel√∂scht.")}));
     } else {
         $c->response->redirect($c->uri_for($self->action_for('list'),
-            {mid => $c->set_status_msg("Mitglied nicht gelˆscht.")}));
+            {mid => $c->set_error_msg("Mitglied nicht gel√∂scht.")}));
     }
 }
 
